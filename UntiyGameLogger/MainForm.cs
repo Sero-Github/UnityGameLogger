@@ -17,7 +17,6 @@ namespace UnityGameLogger
         [DllImport("user32")]
         private static extern int FindWindowA(string lpClasssName, string lpWindowName);
 
-		private readonly Label[] _labelGameFiles;
 		private readonly string adbPath = "scrcpy\\adb.exe";
 		private readonly string logDirectory = Environment.CurrentDirectory + "\\Android-LOG";
 
@@ -27,8 +26,6 @@ namespace UnityGameLogger
 
 			TrayIcon.Visible = true;
 			TrayIcon.ContextMenuStrip = ContextMenu;
-
-			_labelGameFiles = new Label[] { LabelGameFile1, LabelGameFile2, LabelGameFile3 };
 
 			try
 			{
@@ -57,18 +54,6 @@ namespace UnityGameLogger
 			}
 
 			base.WndProc(ref m);
-		}
-		#endregion
-
-		#region IniFile 이벤트
-		private void IniFile_GameFileChanged(object sender, EventArgs e)
-		{
-			SetLabelGameFile();
-		}
-
-		private void IniFile_GamePathChanged(object sender, EventArgs e)
-		{
-			SetLabelGameFile();
 		}
 		#endregion
 
@@ -101,107 +86,11 @@ namespace UnityGameLogger
 			Process.Start(url);
 		}
 		#endregion
-
-		#region Game1
-		private void ButtonStartGame1_Click(object sender, EventArgs e)
-		{
-			ButtonStartGame(0);
-		}
-		
-        private void ButtonGamePath1_Click(object sender, EventArgs e)
-        {
-			ButtonGamePath(0);
-		}
-
-		private void ButtonOpenGameLogFolder1_Click(object sender, EventArgs e)
-		{
-			ButtonOpenGameLogFolder(0);
-		}
-
-		private void NumericUpDownGameExecuteCount1_ValueChanged(object sender, EventArgs e)
-		{
-			NumericUpDownGameExecuteCount(0);
-		}
-
-		private void TextBoxGameMemo1_TextChanged(object sender, EventArgs e)
-		{
-			TextBoxGameMemo(0, TextBoxGameMemo1.Text);
-		}
-		#endregion
-
-		#region Game2
-		private void ButtonStartGame2_Click(object sender, EventArgs e)
-		{
-			ButtonStartGame(1);
-		}
-
-		private void ButtonGamePath2_Click(object sender, EventArgs e)
-		{
-			ButtonGamePath(1);
-		}
-
-		private void ButtonOpenGameLogFolder2_Click(object sender, EventArgs e)
-		{
-			ButtonOpenGameLogFolder(1);
-		}
-
-		private void NumericUpDownGameExecuteCount2_ValueChanged(object sender, EventArgs e)
-		{
-			NumericUpDownGameExecuteCount(1);
-		}
-
-		private void TextBoxGameMemo2_TextChanged(object sender, EventArgs e)
-		{
-			TextBoxGameMemo(1, TextBoxGameMemo2.Text);
-		}
-		#endregion
-
-		#region Game3
-		private void ButtonStartGame3_Click(object sender, EventArgs e)
-		{
-			ButtonStartGame(2);
-		}
-
-		private void ButtonGamePath3_Click(object sender, EventArgs e)
-		{
-			ButtonGamePath(2);
-		}
-
-		private void ButtonOpenGameLogFolder3_Click(object sender, EventArgs e)
-		{
-			ButtonOpenGameLogFolder(2);
-		}
-
-		private void NumericUpDownGameExecuteCount3_ValueChanged(object sender, EventArgs e)
-		{
-			NumericUpDownGameExecuteCount(2);
-		}
-
-		private void TextBoxGameMemo3_TextChanged(object sender, EventArgs e)
-		{
-			TextBoxGameMemo(2, TextBoxGameMemo3.Text);
-		}
-		#endregion
-
-		private void TrayIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-		{
-			this.Show();
-		}
 		
 		#region MainForm
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			TextBoxProjectName.Text = Program.configLoader.ProjectConfig.ProjectName;
-
-			NumericUpDownGameExecuteCount1.Text = Program.configLoader.GameConfigs[0].GameExecuteCount.ToString();
-			NumericUpDownGameExecuteCount2.Text = Program.configLoader.GameConfigs[1].GameExecuteCount.ToString();
-			NumericUpDownGameExecuteCount3.Text = Program.configLoader.GameConfigs[2].GameExecuteCount.ToString();
-
-			TextBoxGameMemo1.Text = Program.configLoader.GameConfigs[0].GameMemo;
-			TextBoxGameMemo2.Text = Program.configLoader.GameConfigs[1].GameMemo;
-			TextBoxGameMemo3.Text = Program.configLoader.GameConfigs[2].GameMemo;
-
-			SetLabelGameFile();
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -209,89 +98,10 @@ namespace UnityGameLogger
 			this.Hide();
 			e.Cancel = true;
 		}
-        #endregion
 
-		private void SetLabelGameFile()
+		private void TrayIcon_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
-			for(int i = 0; i < Program.configLoader.GameConfigs.Length; i++)
-			{
-				string gameFile = Program.configLoader.GameConfigs[i].GameFile;
-				if (gameFile == "")
-				{
-					_labelGameFiles[i].Text = "경로 미설정";
-				}
-				else
-				{
-					_labelGameFiles[i].Text = gameFile;
-				}
-			}
-		}
-
-		#region 공통 버튼부
-		private void ButtonStartGame(int index)
-		{
-			int gameExecuteCount = 1;
-
-			string timeStamp = DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
-			string filePath = Program.configLoader.GameConfigs[index].GameDirectory + "\\" + Program.configLoader.GameConfigs[index].GameFile;
-			string fileName = Program.configLoader.GameConfigs[index].GameFile;
-
-			if (!File.Exists(filePath))
-			{
-				MessageBox.Show("파일 경로를 다시 재지정해주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
-
-			for (int i = 0; i < gameExecuteCount; i++)
-			{
-				StringBuilder unityLogArgument = new StringBuilder();
-				unityLogArgument.Append("-Name \"Player" + (i + 1) + "\" ");
-				unityLogArgument.Append("-logFile \"" + Program.configLoader.GameConfigs[index].GameDirectory + "\\log\\" + timeStamp + "_Player" + (i + 1) + ".log" + "\" ");
-				unityLogArgument.Append("-crash-report-folder \"" + Program.configLoader.GameConfigs[index].GameDirectory + "\\log\\\"");
-				Process.Start(filePath, unityLogArgument.ToString());
-
-				Thread.Sleep(1000);
-
-				int hWnd = FindWindowA(null, Program.configLoader.ProjectConfig.ProjectName);
-				string windowText = $"File Name : {fileName} | LogFile : {timeStamp}_Player{i + 1}.log";
-				SetWindowText(hWnd, windowText);
-
-				Thread.Sleep(1000);
-			}
-		}
-
-		private void ButtonGamePath(int index)
-		{
-			CommonOpenFileDialog ofd = new CommonOpenFileDialog();
-			ofd.Filters.Add(new CommonFileDialogFilter("Execute File", "*.exe"));
-			ofd.Multiselect = false;
-
-			if (ofd.ShowDialog() == CommonFileDialogResult.Ok)
-			{
-				string fileDirectory = Path.GetDirectoryName(ofd.FileName);
-				string fileName = Path.GetFileName(ofd.FileName);
-
-				Program.configLoader.GameConfigs[index].GameDirectory = fileDirectory;
-				Program.configLoader.GameConfigs[index].GameFile = fileName;
-			}
-		}
-
-		private void ButtonOpenGameLogFolder(int index)
-		{
-			string logFolder = Path.Combine(Program.configLoader.GameConfigs[index].GameDirectory, "log");
-			Process.Start("explorer.exe", logFolder);
-		}
-
-		private void NumericUpDownGameExecuteCount(int index)
-		{
-			int gameExecuteCount = int.Parse(NumericUpDownGameExecuteCount1.Value.ToString());
-			Program.configLoader.GameConfigs[index].GameExecuteCount = gameExecuteCount;
-		}
-
-		private void TextBoxGameMemo(int index, string text)
-		{
-			string gamemMemo = text;
-			Program.configLoader.GameConfigs[index].GameMemo = gamemMemo;
+			this.Show();
 		}
 		#endregion
 

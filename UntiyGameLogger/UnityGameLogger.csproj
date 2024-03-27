@@ -66,6 +66,12 @@
     <Compile Include="Config\Option\GameConfig.cs" />
     <Compile Include="Config\Option\LogConfig.cs" />
     <Compile Include="Config\Option\ProjectConfig.cs" />
+    <Compile Include="Controls\GameLauncher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GameLauncher.Designer.cs">
+      <DependentUpon>GameLauncher.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\GameLauncher.resx">
+      <DependentUpon>GameLauncher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,5 +122,6 @@
   <ItemGroup>
     <Content Include="Resources\cogs_icon_237207.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
