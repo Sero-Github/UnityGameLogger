@@ -1,4 +1,6 @@
-﻿namespace UnityGameLogger
+﻿using System;
+
+namespace UnityGameLogger
 {
 	partial class MainForm
 	{
@@ -31,8 +33,8 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.LabelTitle = new System.Windows.Forms.Label();
-			this.ButtonOpenLogFolder1 = new System.Windows.Forms.Button();
-			this.ButtonSetting = new System.Windows.Forms.Button();
+			this.ButtonSetLogFolder = new System.Windows.Forms.Button();
+			this.ButtonSetStartProgram = new System.Windows.Forms.Button();
 			this.LabelProgramInfo = new System.Windows.Forms.Label();
 			this.ButtonQuitProgram = new System.Windows.Forms.Button();
 			this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -54,6 +56,7 @@
 			this.gameLauncher1 = new UnityGameLogger.Controls.GameLauncher();
 			this.gameLauncher2 = new UnityGameLogger.Controls.GameLauncher();
 			this.gameLauncher3 = new UnityGameLogger.Controls.GameLauncher();
+			this.ButtonOpenLogFolder = new System.Windows.Forms.Button();
 			this.ContextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -68,32 +71,32 @@
 			this.LabelTitle.Text = "Unity Game Logger";
 			this.LabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// ButtonOpenLogFolder1
+			// ButtonSetLogFolder
 			// 
-			this.ButtonOpenLogFolder1.Location = new System.Drawing.Point(176, 45);
-			this.ButtonOpenLogFolder1.Margin = new System.Windows.Forms.Padding(0);
-			this.ButtonOpenLogFolder1.Name = "ButtonOpenLogFolder1";
-			this.ButtonOpenLogFolder1.Size = new System.Drawing.Size(170, 40);
-			this.ButtonOpenLogFolder1.TabIndex = 2;
-			this.ButtonOpenLogFolder1.Text = "로그 폴더 열기";
-			this.ButtonOpenLogFolder1.UseVisualStyleBackColor = true;
-			this.ButtonOpenLogFolder1.Click += new System.EventHandler(this.ButtonOpenLogFolder1_Click);
+			this.ButtonSetLogFolder.Location = new System.Drawing.Point(176, 45);
+			this.ButtonSetLogFolder.Margin = new System.Windows.Forms.Padding(0);
+			this.ButtonSetLogFolder.Name = "ButtonSetLogFolder";
+			this.ButtonSetLogFolder.Size = new System.Drawing.Size(170, 24);
+			this.ButtonSetLogFolder.TabIndex = 2;
+			this.ButtonSetLogFolder.Text = "로그 폴더 설정";
+			this.ButtonSetLogFolder.UseVisualStyleBackColor = true;
+			this.ButtonSetLogFolder.Click += new System.EventHandler(this.ButtonSetLogFolder_Click);
 			// 
-			// ButtonSetting
+			// ButtonSetStartProgram
 			// 
-			this.ButtonSetting.Location = new System.Drawing.Point(352, 281);
-			this.ButtonSetting.Margin = new System.Windows.Forms.Padding(0);
-			this.ButtonSetting.Name = "ButtonSetting";
-			this.ButtonSetting.Size = new System.Drawing.Size(168, 24);
-			this.ButtonSetting.TabIndex = 23;
-			this.ButtonSetting.Text = "프로그램 설정";
-			this.ButtonSetting.UseVisualStyleBackColor = true;
-			this.ButtonSetting.Click += new System.EventHandler(this.ButtonSetting_Click);
+			this.ButtonSetStartProgram.Location = new System.Drawing.Point(352, 288);
+			this.ButtonSetStartProgram.Margin = new System.Windows.Forms.Padding(0);
+			this.ButtonSetStartProgram.Name = "ButtonSetStartProgram";
+			this.ButtonSetStartProgram.Size = new System.Drawing.Size(168, 24);
+			this.ButtonSetStartProgram.TabIndex = 23;
+			this.ButtonSetStartProgram.Text = "프로그램 설정";
+			this.ButtonSetStartProgram.UseVisualStyleBackColor = true;
+			this.ButtonSetStartProgram.Click += new System.EventHandler(this.ButtonSetStartProgram_Click);
 			// 
 			// LabelProgramInfo
 			// 
 			this.LabelProgramInfo.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.LabelProgramInfo.Location = new System.Drawing.Point(8, 334);
+			this.LabelProgramInfo.Location = new System.Drawing.Point(8, 341);
 			this.LabelProgramInfo.Margin = new System.Windows.Forms.Padding(0);
 			this.LabelProgramInfo.Name = "LabelProgramInfo";
 			this.LabelProgramInfo.Size = new System.Drawing.Size(512, 32);
@@ -103,7 +106,7 @@
 			// 
 			// ButtonQuitProgram
 			// 
-			this.ButtonQuitProgram.Location = new System.Drawing.Point(352, 305);
+			this.ButtonQuitProgram.Location = new System.Drawing.Point(352, 312);
 			this.ButtonQuitProgram.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonQuitProgram.Name = "ButtonQuitProgram";
 			this.ButtonQuitProgram.Size = new System.Drawing.Size(168, 24);
@@ -124,7 +127,7 @@
 			// 
 			this.LabelSplitter1.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.LabelSplitter1.Font = new System.Drawing.Font("굴림", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.LabelSplitter1.Location = new System.Drawing.Point(8, 92);
+			this.LabelSplitter1.Location = new System.Drawing.Point(8, 99);
 			this.LabelSplitter1.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter1.Name = "LabelSplitter1";
 			this.LabelSplitter1.Size = new System.Drawing.Size(338, 1);
@@ -134,7 +137,7 @@
 			// 
 			this.LabelSplitter2.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.LabelSplitter2.Font = new System.Drawing.Font("굴림", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.LabelSplitter2.Location = new System.Drawing.Point(8, 172);
+			this.LabelSplitter2.Location = new System.Drawing.Point(8, 179);
 			this.LabelSplitter2.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter2.Name = "LabelSplitter2";
 			this.LabelSplitter2.Size = new System.Drawing.Size(338, 1);
@@ -142,7 +145,7 @@
 			// 
 			// ButtonHelpPage
 			// 
-			this.ButtonHelpPage.Location = new System.Drawing.Point(352, 257);
+			this.ButtonHelpPage.Location = new System.Drawing.Point(352, 264);
 			this.ButtonHelpPage.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonHelpPage.Name = "ButtonHelpPage";
 			this.ButtonHelpPage.Size = new System.Drawing.Size(168, 24);
@@ -155,7 +158,7 @@
 			// 
 			this.LabelSplitter3.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.LabelSplitter3.Font = new System.Drawing.Font("굴림", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.LabelSplitter3.Location = new System.Drawing.Point(8, 252);
+			this.LabelSplitter3.Location = new System.Drawing.Point(8, 259);
 			this.LabelSplitter3.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter3.Name = "LabelSplitter3";
 			this.LabelSplitter3.Size = new System.Drawing.Size(338, 1);
@@ -165,7 +168,7 @@
 			// 
 			this.label6.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.label6.Font = new System.Drawing.Font("굴림", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label6.Location = new System.Drawing.Point(8, 332);
+			this.label6.Location = new System.Drawing.Point(8, 339);
 			this.label6.MinimumSize = new System.Drawing.Size(1, 1);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(511, 1);
@@ -173,7 +176,7 @@
 			// 
 			// ButtonADBDevice
 			// 
-			this.ButtonADBDevice.Location = new System.Drawing.Point(352, 153);
+			this.ButtonADBDevice.Location = new System.Drawing.Point(352, 160);
 			this.ButtonADBDevice.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBDevice.Name = "ButtonADBDevice";
 			this.ButtonADBDevice.Size = new System.Drawing.Size(168, 24);
@@ -188,14 +191,14 @@
 			this.ListBoxDevices.ItemHeight = 12;
 			this.ListBoxDevices.Location = new System.Drawing.Point(352, 45);
 			this.ListBoxDevices.Name = "ListBoxDevices";
-			this.ListBoxDevices.Size = new System.Drawing.Size(168, 100);
+			this.ListBoxDevices.Size = new System.Drawing.Size(168, 112);
 			this.ListBoxDevices.TabIndex = 17;
 			this.ListBoxDevices.DoubleClick += new System.EventHandler(this.ListBoxDevices_DoubleClick);
 			// 
 			// ButtonADBLogExtract
 			// 
 			this.ButtonADBLogExtract.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.ButtonADBLogExtract.Location = new System.Drawing.Point(352, 177);
+			this.ButtonADBLogExtract.Location = new System.Drawing.Point(352, 184);
 			this.ButtonADBLogExtract.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBLogExtract.Name = "ButtonADBLogExtract";
 			this.ButtonADBLogExtract.Size = new System.Drawing.Size(168, 24);
@@ -206,7 +209,7 @@
 			// 
 			// ButtonADBLogClear
 			// 
-			this.ButtonADBLogClear.Location = new System.Drawing.Point(352, 201);
+			this.ButtonADBLogClear.Location = new System.Drawing.Point(352, 208);
 			this.ButtonADBLogClear.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBLogClear.Name = "ButtonADBLogClear";
 			this.ButtonADBLogClear.Size = new System.Drawing.Size(168, 24);
@@ -219,7 +222,7 @@
 			// 
 			this.LabelSplitter4.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.LabelSplitter4.Font = new System.Drawing.Font("굴림", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.LabelSplitter4.Location = new System.Drawing.Point(353, 252);
+			this.LabelSplitter4.Location = new System.Drawing.Point(353, 259);
 			this.LabelSplitter4.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter4.Name = "LabelSplitter4";
 			this.LabelSplitter4.Size = new System.Drawing.Size(166, 1);
@@ -227,7 +230,7 @@
 			// 
 			// ButtonADBLogFolderOpen
 			// 
-			this.ButtonADBLogFolderOpen.Location = new System.Drawing.Point(352, 225);
+			this.ButtonADBLogFolderOpen.Location = new System.Drawing.Point(352, 232);
 			this.ButtonADBLogFolderOpen.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBLogFolderOpen.Name = "ButtonADBLogFolderOpen";
 			this.ButtonADBLogFolderOpen.Size = new System.Drawing.Size(168, 24);
@@ -253,7 +256,7 @@
 			// LabelProjectName
 			// 
 			this.LabelProjectName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.LabelProjectName.Location = new System.Drawing.Point(8, 45);
+			this.LabelProjectName.Location = new System.Drawing.Point(8, 49);
 			this.LabelProjectName.Name = "LabelProjectName";
 			this.LabelProjectName.Size = new System.Drawing.Size(165, 15);
 			this.LabelProjectName.TabIndex = 25;
@@ -262,7 +265,7 @@
 			// 
 			// TextBoxProjectName
 			// 
-			this.TextBoxProjectName.Location = new System.Drawing.Point(8, 63);
+			this.TextBoxProjectName.Location = new System.Drawing.Point(8, 72);
 			this.TextBoxProjectName.Name = "TextBoxProjectName";
 			this.TextBoxProjectName.Size = new System.Drawing.Size(165, 21);
 			this.TextBoxProjectName.TabIndex = 1;
@@ -271,7 +274,7 @@
 			// gameLauncher1
 			// 
 			this.gameLauncher1.GameConfigSlot = 0;
-			this.gameLauncher1.Location = new System.Drawing.Point(8, 96);
+			this.gameLauncher1.Location = new System.Drawing.Point(8, 103);
 			this.gameLauncher1.MaximumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher1.MinimumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher1.Name = "gameLauncher1";
@@ -281,7 +284,7 @@
 			// gameLauncher2
 			// 
 			this.gameLauncher2.GameConfigSlot = 1;
-			this.gameLauncher2.Location = new System.Drawing.Point(8, 176);
+			this.gameLauncher2.Location = new System.Drawing.Point(8, 183);
 			this.gameLauncher2.MaximumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher2.MinimumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher2.Name = "gameLauncher2";
@@ -291,18 +294,29 @@
 			// gameLauncher3
 			// 
 			this.gameLauncher3.GameConfigSlot = 2;
-			this.gameLauncher3.Location = new System.Drawing.Point(8, 256);
+			this.gameLauncher3.Location = new System.Drawing.Point(8, 263);
 			this.gameLauncher3.MaximumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher3.MinimumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher3.Name = "gameLauncher3";
 			this.gameLauncher3.Size = new System.Drawing.Size(338, 73);
 			this.gameLauncher3.TabIndex = 26;
 			// 
+			// ButtonOpenLogFolder
+			// 
+			this.ButtonOpenLogFolder.Location = new System.Drawing.Point(176, 71);
+			this.ButtonOpenLogFolder.Margin = new System.Windows.Forms.Padding(0);
+			this.ButtonOpenLogFolder.Name = "ButtonOpenLogFolder";
+			this.ButtonOpenLogFolder.Size = new System.Drawing.Size(170, 24);
+			this.ButtonOpenLogFolder.TabIndex = 2;
+			this.ButtonOpenLogFolder.Text = "로그 폴더 열기";
+			this.ButtonOpenLogFolder.UseVisualStyleBackColor = true;
+			this.ButtonOpenLogFolder.Click += new System.EventHandler(this.ButtonOpenLogFolder_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(528, 371);
+			this.ClientSize = new System.Drawing.Size(528, 400);
 			this.Controls.Add(this.gameLauncher3);
 			this.Controls.Add(this.gameLauncher2);
 			this.Controls.Add(this.gameLauncher1);
@@ -316,12 +330,13 @@
 			this.Controls.Add(this.LabelSplitter1);
 			this.Controls.Add(this.ButtonQuitProgram);
 			this.Controls.Add(this.ButtonHelpPage);
-			this.Controls.Add(this.ButtonSetting);
+			this.Controls.Add(this.ButtonSetStartProgram);
 			this.Controls.Add(this.ButtonADBLogFolderOpen);
 			this.Controls.Add(this.ButtonADBLogClear);
 			this.Controls.Add(this.ButtonADBLogExtract);
 			this.Controls.Add(this.ButtonADBDevice);
-			this.Controls.Add(this.ButtonOpenLogFolder1);
+			this.Controls.Add(this.ButtonOpenLogFolder);
+			this.Controls.Add(this.ButtonSetLogFolder);
 			this.Controls.Add(this.LabelProgramInfo);
 			this.Controls.Add(this.LabelTitle);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -334,12 +349,11 @@
 			this.PerformLayout();
 
 		}
-
 		#endregion
 
 		private System.Windows.Forms.Label LabelTitle;
-		private System.Windows.Forms.Button ButtonOpenLogFolder1;
-		private System.Windows.Forms.Button ButtonSetting;
+		private System.Windows.Forms.Button ButtonSetLogFolder;
+		private System.Windows.Forms.Button ButtonSetStartProgram;
 		private System.Windows.Forms.Label LabelProgramInfo;
 		private System.Windows.Forms.Button ButtonQuitProgram;
 		private System.Windows.Forms.NotifyIcon TrayIcon;
@@ -361,6 +375,7 @@
 		private UnityGameLogger.Controls.GameLauncher gameLauncher1;
 		private UnityGameLogger.Controls.GameLauncher gameLauncher2;
 		private UnityGameLogger.Controls.GameLauncher gameLauncher3;
+		private System.Windows.Forms.Button ButtonOpenLogFolder;
 	}
 }
 

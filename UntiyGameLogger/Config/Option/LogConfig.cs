@@ -4,7 +4,7 @@
 	{
 		private string _logDirectory;
 
-		public LogConfig(int ConfigSlot) : base(ConfigSlot, "LOG") { }
+		public LogConfig() : base(0, "LOG") { }
 
 		public string LogDirectory
 		{ 
@@ -12,14 +12,14 @@
 			set
 			{
 				_logDirectory = value;
-				EditConfig($"LOG_PATH{_configSlot}", value);
-				Program.LogFileWatchers[_configSlot - 1].Path = value;
+				EditConfig("LOG_PATH", value);
+				Program.LogFileWatcher.Path = value;
 			}
 		}
 
 		protected override void InitConfig()
 		{
-			InitOption($"LOG_PATH{_configSlot}", ref _logDirectory);
+			InitOption("LOG_PATH", ref _logDirectory, "C:");
 		}
 	}
 }

@@ -5,6 +5,8 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading;
 using System.Runtime.InteropServices;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using Microsoft.Win32;
 
 namespace UnityGameLogger
 {
@@ -16,6 +18,9 @@ namespace UnityGameLogger
         [DllImport("user32")]
         private static extern int FindWindowA(string lpClasssName, string lpWindowName);
 
+		private readonly string _startupRegPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+		private readonly string _programName = @"UnityGameLogger";
+
 		private readonly string adbPath = "scrcpy\\adb.exe";
 		private readonly string logDirectory = Environment.CurrentDirectory + "\\Android-LOG";
 
@@ -25,6 +30,26 @@ namespace UnityGameLogger
 
 			TrayIcon.Visible = true;
 			TrayIcon.ContextMenuStrip = ContextMenu;
+
+			using (RegistryKey regKey = Registry.CurrentUser.OpenSubKey(_startupRegPath, true))
+			{
+				try
+				{
+					if (regKey.GetValue(_programName) == null)
+					{
+						ButtonSetStartProgram.Text = "시작 프로그램 등록";
+					}
+					else
+					{
+						ButtonSetStartProgram.Text = "시작 프로그램 해제";
+					}
+					regKey.Close();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+			}
 
 			try
 			{
@@ -57,21 +82,47 @@ namespace UnityGameLogger
 		#endregion
 
 		#region Buttons
-		private void ButtonOpenLogFolder1_Click(object sender, EventArgs e)
+		private void ButtonOpenLogFolder_Click(object sender, EventArgs e)
 		{
-			Process.Start("explorer.exe", Program.configLoader.LogConfigs[0].LogDirectory);
-		}
-		private void ButtonOpenLogFolder2_Click(object sender, EventArgs e)
-		{
-			Process.Start("explorer.exe", Program.configLoader.LogConfigs[1].LogDirectory);
+			Process.Start("explorer.exe", Program.configLoader.LogConfig.LogDirectory);
 		}
 
-		private void ButtonSetting_Click(object sender, EventArgs e)
+		private void ButtonSetLogFolder_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-			using (SettingForm settingForm = new SettingForm())
-				settingForm.ShowDialog();
-			this.Show();
+			CommonOpenFileDialog ofd = new CommonOpenFileDialog
+			{
+				IsFolderPicker = true,
+				Multiselect = false
+			};
+			if (ofd.ShowDialog() == CommonFileDialogResult.Ok)
+			{
+				Program.configLoader.LogConfig.LogDirectory = ofd.FileName;
+			}
+		}
+
+		private void ButtonSetStartProgram_Click(object sender, EventArgs e)
+		{
+			using (RegistryKey regKey = Registry.CurrentUser.OpenSubKey(_startupRegPath, true))
+			{
+				try
+				{
+					if (regKey.GetValue(_programName) == null)
+					{
+						regKey.SetValue(_programName, Application.ExecutablePath);
+						ButtonSetStartProgram.Text = "시작 프로그램 해제";
+					}
+					else
+					{
+						regKey.DeleteValue(_programName, false);
+						ButtonSetStartProgram.Text = "시작 프로그램 등록";
+					}
+					regKey.Close();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+			}
 		}
 
 		private void ButtonQuitProgram_Click(object sender, EventArgs e)
@@ -294,5 +345,6 @@ namespace UnityGameLogger
 		{
 			Program.configLoader.ProjectConfig.ProjectName = TextBoxProjectName.Text;
 		}
+
 	}
 }

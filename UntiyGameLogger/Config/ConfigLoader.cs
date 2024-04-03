@@ -7,10 +7,7 @@ namespace UnityGameLogger.Config
 		#region 변수
 		public ProjectConfig ProjectConfig;
 
-		public LogConfig LogConfig1;
-		public LogConfig LogConfig2;
-
-		public LogConfig[] LogConfigs;
+		public LogConfig LogConfig;
 
 		public GameConfig GameConfig1;
 		public GameConfig GameConfig2;
@@ -24,11 +21,7 @@ namespace UnityGameLogger.Config
 		{
 			ProjectConfig = new ProjectConfig();
 
-			LogConfigs = new LogConfig[]
-			{ 
-				LogConfig1 = new LogConfig(1),
-				LogConfig2 = new LogConfig(2)
-			};
+			LogConfig = new LogConfig();
 
 			GameConfigs = new GameConfig[]
 			{
