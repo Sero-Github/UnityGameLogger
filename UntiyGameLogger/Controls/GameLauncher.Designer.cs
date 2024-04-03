@@ -141,6 +141,7 @@
 			this.MinimumSize = new System.Drawing.Size(338, 73);
 			this.Name = "GameLauncher";
 			this.Size = new System.Drawing.Size(338, 73);
+			this.Load += new System.EventHandler(this.GameLauncher_Load);
 			((System.ComponentModel.ISupportInitialize)(this.NumericUpDownGameExecuteCount)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

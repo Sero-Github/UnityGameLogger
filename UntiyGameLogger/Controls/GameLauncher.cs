@@ -26,19 +26,25 @@ namespace UnityGameLogger.Controls
 		public GameLauncher()
 		{
 			InitializeComponent();
+		}
 
-			NumericUpDownGameExecuteCount.Text = Program.configLoader.GameConfigs[_gameConfigSlot].GameExecuteCount.ToString();
-			TextBoxGameMemo.Text = Program.configLoader.GameConfigs[_gameConfigSlot].GameMemo;
-
-			string gameFile = Program.configLoader.GameConfigs[_gameConfigSlot].GameFile;
-
-			if (gameFile == "")
+		private void GameLauncher_Load(object sender, EventArgs e)
+		{
+			if (!DesignMode)
 			{
-				LabelGameFile.Text = "경로 미설정";
-			}
-			else
-			{
-				LabelGameFile.Text = gameFile;
+				NumericUpDownGameExecuteCount.Text = Program.configLoader.GameConfigs[_gameConfigSlot].GameExecuteCount.ToString();
+				TextBoxGameMemo.Text = Program.configLoader.GameConfigs[_gameConfigSlot].GameMemo;
+
+				string gameFile = Program.configLoader.GameConfigs[_gameConfigSlot].GameFile;
+
+				if (gameFile == "")
+				{
+					LabelGameFile.Text = "경로 미설정";
+				}
+				else
+				{
+					LabelGameFile.Text = gameFile;
+				}
 			}
 		}
 

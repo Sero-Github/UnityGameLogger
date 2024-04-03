@@ -5,7 +5,6 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading;
 using System.Runtime.InteropServices;
-using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace UnityGameLogger
 {
