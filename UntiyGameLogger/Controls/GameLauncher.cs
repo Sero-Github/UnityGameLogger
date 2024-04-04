@@ -93,6 +93,8 @@ namespace UnityGameLogger.Controls
 
 				Program.configLoader.GameConfigs[_gameConfigSlot].GameDirectory = fileDirectory;
 				Program.configLoader.GameConfigs[_gameConfigSlot].GameFile = fileName;
+
+				LabelGameFile.Text = fileName;
 			}
 		}
 

@@ -127,7 +127,7 @@ namespace UnityGameLogger
 
 		private void ButtonGithubPage_Click(object sender, EventArgs e)
 		{
-			string url = @"";
+			string url = @"https://github.com/Sero-Github/UnityGameLogger";
 			Process.Start(url);
 		}
 
@@ -226,7 +226,7 @@ namespace UnityGameLogger
 
 				string logFileName = $"{ListBoxDevices.SelectedItem}_{timeStamp}.log";
 				string logPath = Path.Combine(logDirectory, logFileName);
-				string logcatArgument = $@"/c adbPath -s {ListBoxDevices.SelectedItem} logcat -d > {logPath}";
+				string logcatArgument = $@"/c {adbPath} -s {ListBoxDevices.SelectedItem} logcat -d > {logPath}";
 
 				Process logcatShell = new Process
 				{
@@ -241,7 +241,7 @@ namespace UnityGameLogger
 				};
 				logcatShell.Start();
 
-				string logUnityFileName = $"{ListBoxDevices.SelectedItem}_{timeStamp}-UnityLog";
+				string logUnityFileName = $"{ListBoxDevices.SelectedItem}_{timeStamp}-Unity.Log";
 				string logUnityPath = Path.Combine(logDirectory, logUnityFileName);
 				string logcatUnityArgument = $@"/c {adbPath} -s {ListBoxDevices.SelectedItem} logcat -d -s Unity > {logUnityPath}";
 

@@ -20,7 +20,7 @@ namespace UnityGameLogger.Config.Option
 			}
 		}
 
-		public ProjectConfig() : base(0, "PROJECT") { }
+		public ProjectConfig() : base("PROJECT") { }
 
 		protected override void InitConfig()
 		{

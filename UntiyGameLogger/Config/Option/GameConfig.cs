@@ -7,8 +7,6 @@
 		private string _gameMemo;
 		private int _gameExecuteCount;
 
-		public GameConfig(int ConfigSlot) : base(ConfigSlot, $"GAME{ConfigSlot}") { }
-
 		public string GameDirectory
 		{
 			get { return _gameDirectory; }
@@ -48,6 +46,8 @@
 				EditConfig("GAME_EXECUTE_COUNT", _gameExecuteCount.ToString());
 			}
 		}
+
+		public GameConfig(int ConfigSlot) : base(ConfigSlot, $"GAME{ConfigSlot}") { }
 
 		protected override void InitConfig()
 		{

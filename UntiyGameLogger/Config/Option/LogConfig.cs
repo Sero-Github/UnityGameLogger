@@ -4,8 +4,6 @@
 	{
 		private string _logDirectory;
 
-		public LogConfig() : base(0, "LOG") { }
-
 		public string LogDirectory
 		{ 
 			get { return _logDirectory; }
@@ -16,6 +14,8 @@
 				Program.LogFileWatcher.Path = value;
 			}
 		}
+
+		public LogConfig() : base("LOG") { }
 
 		protected override void InitConfig()
 		{

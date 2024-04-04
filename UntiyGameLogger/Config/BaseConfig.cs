@@ -18,7 +18,13 @@ namespace UnityGameLogger.Config
 
 		private readonly string _category;
 		private readonly string _iniPath;
+		public BaseConfig(string category)
+		{
+			_category = category;
 
+			_iniPath = $"{Path.GetDirectoryName(Application.ExecutablePath)}\\config.ini";
+			InitConfig();
+		}
 		public BaseConfig(int configSlot, string category)
 		{
 			_configSlot = configSlot;
