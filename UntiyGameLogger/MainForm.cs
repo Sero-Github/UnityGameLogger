@@ -125,18 +125,24 @@ namespace UnityGameLogger
 			}
 		}
 
-		private void ButtonQuitProgram_Click(object sender, EventArgs e)
-		{
-			ExitProgram();
-		}
-
-		private void ButtonHelpPage_Click(object sender, EventArgs e)
+		private void ButtonGithubPage_Click(object sender, EventArgs e)
 		{
 			string url = @"";
 			Process.Start(url);
 		}
+
+		private void ButtonLicense_Click(object sender, EventArgs e)
+		{
+			string filePath = @"LICENSE.txt";
+			Process.Start(filePath);
+		}
+
+		private void ButtonQuitProgram_Click(object sender, EventArgs e)
+		{
+			ExitProgram();
+		}
 		#endregion
-		
+
 		#region MainForm
 		private void MainForm_Load(object sender, EventArgs e)
 		{
@@ -345,6 +351,5 @@ namespace UnityGameLogger
 		{
 			Program.configLoader.ProjectConfig.ProjectName = TextBoxProjectName.Text;
 		}
-
 	}
 }

@@ -40,7 +40,7 @@ namespace UnityGameLogger
 			this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.LabelSplitter1 = new System.Windows.Forms.Label();
 			this.LabelSplitter2 = new System.Windows.Forms.Label();
-			this.ButtonHelpPage = new System.Windows.Forms.Button();
+			this.ButtonGithubPage = new System.Windows.Forms.Button();
 			this.LabelSplitter3 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.ButtonADBDevice = new System.Windows.Forms.Button();
@@ -53,10 +53,11 @@ namespace UnityGameLogger
 			this.ToolStripMenuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
 			this.LabelProjectName = new System.Windows.Forms.Label();
 			this.TextBoxProjectName = new System.Windows.Forms.TextBox();
-			this.gameLauncher1 = new UnityGameLogger.Controls.GameLauncher();
-			this.gameLauncher2 = new UnityGameLogger.Controls.GameLauncher();
-			this.gameLauncher3 = new UnityGameLogger.Controls.GameLauncher();
 			this.ButtonOpenLogFolder = new System.Windows.Forms.Button();
+			this.ButtonLicense = new System.Windows.Forms.Button();
+			this.gameLauncher3 = new UnityGameLogger.Controls.GameLauncher();
+			this.gameLauncher2 = new UnityGameLogger.Controls.GameLauncher();
+			this.gameLauncher1 = new UnityGameLogger.Controls.GameLauncher();
 			this.ContextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -143,16 +144,16 @@ namespace UnityGameLogger
 			this.LabelSplitter2.Size = new System.Drawing.Size(338, 1);
 			this.LabelSplitter2.TabIndex = 9;
 			// 
-			// ButtonHelpPage
+			// ButtonGithubPage
 			// 
-			this.ButtonHelpPage.Location = new System.Drawing.Point(352, 264);
-			this.ButtonHelpPage.Margin = new System.Windows.Forms.Padding(0);
-			this.ButtonHelpPage.Name = "ButtonHelpPage";
-			this.ButtonHelpPage.Size = new System.Drawing.Size(168, 24);
-			this.ButtonHelpPage.TabIndex = 22;
-			this.ButtonHelpPage.Text = "GitHub Page";
-			this.ButtonHelpPage.UseVisualStyleBackColor = true;
-			this.ButtonHelpPage.Click += new System.EventHandler(this.ButtonHelpPage_Click);
+			this.ButtonGithubPage.Location = new System.Drawing.Point(352, 264);
+			this.ButtonGithubPage.Margin = new System.Windows.Forms.Padding(0);
+			this.ButtonGithubPage.Name = "ButtonGithubPage";
+			this.ButtonGithubPage.Size = new System.Drawing.Size(84, 24);
+			this.ButtonGithubPage.TabIndex = 22;
+			this.ButtonGithubPage.Text = "Github Page";
+			this.ButtonGithubPage.UseVisualStyleBackColor = true;
+			this.ButtonGithubPage.Click += new System.EventHandler(this.ButtonGithubPage_Click);
 			// 
 			// LabelSplitter3
 			// 
@@ -271,36 +272,6 @@ namespace UnityGameLogger
 			this.TextBoxProjectName.TabIndex = 1;
 			this.TextBoxProjectName.TextChanged += new System.EventHandler(this.TextBoxProjectName_TextChanged);
 			// 
-			// gameLauncher1
-			// 
-			this.gameLauncher1.GameConfigSlot = 0;
-			this.gameLauncher1.Location = new System.Drawing.Point(8, 103);
-			this.gameLauncher1.MaximumSize = new System.Drawing.Size(338, 73);
-			this.gameLauncher1.MinimumSize = new System.Drawing.Size(338, 73);
-			this.gameLauncher1.Name = "gameLauncher1";
-			this.gameLauncher1.Size = new System.Drawing.Size(338, 73);
-			this.gameLauncher1.TabIndex = 26;
-			// 
-			// gameLauncher2
-			// 
-			this.gameLauncher2.GameConfigSlot = 1;
-			this.gameLauncher2.Location = new System.Drawing.Point(8, 183);
-			this.gameLauncher2.MaximumSize = new System.Drawing.Size(338, 73);
-			this.gameLauncher2.MinimumSize = new System.Drawing.Size(338, 73);
-			this.gameLauncher2.Name = "gameLauncher2";
-			this.gameLauncher2.Size = new System.Drawing.Size(338, 73);
-			this.gameLauncher2.TabIndex = 26;
-			// 
-			// gameLauncher3
-			// 
-			this.gameLauncher3.GameConfigSlot = 2;
-			this.gameLauncher3.Location = new System.Drawing.Point(8, 263);
-			this.gameLauncher3.MaximumSize = new System.Drawing.Size(338, 73);
-			this.gameLauncher3.MinimumSize = new System.Drawing.Size(338, 73);
-			this.gameLauncher3.Name = "gameLauncher3";
-			this.gameLauncher3.Size = new System.Drawing.Size(338, 73);
-			this.gameLauncher3.TabIndex = 26;
-			// 
 			// ButtonOpenLogFolder
 			// 
 			this.ButtonOpenLogFolder.Location = new System.Drawing.Point(176, 71);
@@ -312,11 +283,53 @@ namespace UnityGameLogger
 			this.ButtonOpenLogFolder.UseVisualStyleBackColor = true;
 			this.ButtonOpenLogFolder.Click += new System.EventHandler(this.ButtonOpenLogFolder_Click);
 			// 
+			// ButtonLicense
+			// 
+			this.ButtonLicense.Location = new System.Drawing.Point(436, 264);
+			this.ButtonLicense.Margin = new System.Windows.Forms.Padding(0);
+			this.ButtonLicense.Name = "ButtonLicense";
+			this.ButtonLicense.Size = new System.Drawing.Size(84, 24);
+			this.ButtonLicense.TabIndex = 27;
+			this.ButtonLicense.Text = "License";
+			this.ButtonLicense.UseVisualStyleBackColor = true;
+			this.ButtonLicense.Click += new System.EventHandler(this.ButtonLicense_Click);
+			// 
+			// gameLauncher3
+			// 
+			this.gameLauncher3.GameConfigSlot = 2;
+			this.gameLauncher3.Location = new System.Drawing.Point(8, 263);
+			this.gameLauncher3.MaximumSize = new System.Drawing.Size(338, 73);
+			this.gameLauncher3.MinimumSize = new System.Drawing.Size(338, 73);
+			this.gameLauncher3.Name = "gameLauncher3";
+			this.gameLauncher3.Size = new System.Drawing.Size(338, 73);
+			this.gameLauncher3.TabIndex = 26;
+			// 
+			// gameLauncher2
+			// 
+			this.gameLauncher2.GameConfigSlot = 1;
+			this.gameLauncher2.Location = new System.Drawing.Point(8, 183);
+			this.gameLauncher2.MaximumSize = new System.Drawing.Size(338, 73);
+			this.gameLauncher2.MinimumSize = new System.Drawing.Size(338, 73);
+			this.gameLauncher2.Name = "gameLauncher2";
+			this.gameLauncher2.Size = new System.Drawing.Size(338, 73);
+			this.gameLauncher2.TabIndex = 26;
+			// 
+			// gameLauncher1
+			// 
+			this.gameLauncher1.GameConfigSlot = 0;
+			this.gameLauncher1.Location = new System.Drawing.Point(8, 103);
+			this.gameLauncher1.MaximumSize = new System.Drawing.Size(338, 73);
+			this.gameLauncher1.MinimumSize = new System.Drawing.Size(338, 73);
+			this.gameLauncher1.Name = "gameLauncher1";
+			this.gameLauncher1.Size = new System.Drawing.Size(338, 73);
+			this.gameLauncher1.TabIndex = 26;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(528, 400);
+			this.ClientSize = new System.Drawing.Size(528, 376);
+			this.Controls.Add(this.ButtonLicense);
 			this.Controls.Add(this.gameLauncher3);
 			this.Controls.Add(this.gameLauncher2);
 			this.Controls.Add(this.gameLauncher1);
@@ -329,7 +342,7 @@ namespace UnityGameLogger
 			this.Controls.Add(this.LabelSplitter2);
 			this.Controls.Add(this.LabelSplitter1);
 			this.Controls.Add(this.ButtonQuitProgram);
-			this.Controls.Add(this.ButtonHelpPage);
+			this.Controls.Add(this.ButtonGithubPage);
 			this.Controls.Add(this.ButtonSetStartProgram);
 			this.Controls.Add(this.ButtonADBLogFolderOpen);
 			this.Controls.Add(this.ButtonADBLogClear);
@@ -359,7 +372,7 @@ namespace UnityGameLogger
 		private System.Windows.Forms.NotifyIcon TrayIcon;
 		private System.Windows.Forms.Label LabelSplitter1;
 		private System.Windows.Forms.Label LabelSplitter2;
-        private System.Windows.Forms.Button ButtonHelpPage;
+        private System.Windows.Forms.Button ButtonGithubPage;
 		private System.Windows.Forms.Label LabelSplitter3;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button ButtonADBDevice;
@@ -376,6 +389,7 @@ namespace UnityGameLogger
 		private UnityGameLogger.Controls.GameLauncher gameLauncher2;
 		private UnityGameLogger.Controls.GameLauncher gameLauncher3;
 		private System.Windows.Forms.Button ButtonOpenLogFolder;
+		private System.Windows.Forms.Button ButtonLicense;
 	}
 }
 
