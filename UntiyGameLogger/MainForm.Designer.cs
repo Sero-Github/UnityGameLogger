@@ -67,7 +67,7 @@ namespace UnityGameLogger
 			this.LabelTitle.Location = new System.Drawing.Point(8, 8);
 			this.LabelTitle.Margin = new System.Windows.Forms.Padding(0);
 			this.LabelTitle.Name = "LabelTitle";
-			this.LabelTitle.Size = new System.Drawing.Size(511, 25);
+			this.LabelTitle.Size = new System.Drawing.Size(512, 25);
 			this.LabelTitle.TabIndex = 0;
 			this.LabelTitle.Text = "Unity Game Logger";
 			this.LabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
