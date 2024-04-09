@@ -14,20 +14,12 @@ namespace UnityGameLogger.Config
 		private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 		#endregion
 
-		public readonly int _configSlot;
 		private readonly string _category;
 
 		private readonly string _iniPath = $"{Path.GetDirectoryName(Application.ExecutablePath)}\\config.ini";
 
 		public BaseConfig(string category)
 		{
-			_category = category;
-
-			InitConfig();
-		}
-		public BaseConfig(int configSlot, string category)
-		{
-			_configSlot = configSlot;
 			_category = category;
 
 			InitConfig();

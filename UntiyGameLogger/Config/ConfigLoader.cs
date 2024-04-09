@@ -27,9 +27,9 @@ namespace UnityGameLogger.Config
 
 			GameConfigs = new GameConfig[]
 			{
-				GameConfig1 = new GameConfig(1),
-				GameConfig2 = new GameConfig(2),
-				GameConfig3 = new GameConfig(3)
+				GameConfig1 = new GameConfig(0),
+				GameConfig2 = new GameConfig(1),
+				GameConfig3 = new GameConfig(2)
 			};
 		}
 

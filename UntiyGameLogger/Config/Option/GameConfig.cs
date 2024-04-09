@@ -47,7 +47,7 @@
 			}
 		}
 
-		public GameConfig(int ConfigSlot) : base(ConfigSlot, $"GAME{ConfigSlot}") { }
+		public GameConfig(int ConfigSlot) : base($"GAME{ConfigSlot}") { }
 
 		protected override void InitConfig()
 		{
