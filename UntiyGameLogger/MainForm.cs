@@ -21,8 +21,8 @@ namespace UnityGameLogger
 		private readonly string _startupRegPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 		private readonly string _programName = @"UnityGameLogger";
 
-		private readonly string adbPath = "scrcpy\\adb.exe";
-		private readonly string logDirectory = Environment.CurrentDirectory + "\\Android-LOG";
+		private readonly string adbPath = Path.GetDirectoryName(Application.ExecutablePath) + "\\scrcpy\\adb.exe";
+		private readonly string logDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\Android-LOG";
 
 		public MainForm()
 		{
@@ -215,8 +215,6 @@ namespace UnityGameLogger
 						ListBoxDevices.Items.Add(line[0]);
 					}
 				}
-				proc.Close();
-				Console.WriteLine("The End");
 			}
 		}
 
@@ -338,7 +336,7 @@ namespace UnityGameLogger
 
 		private void ListBoxDevices_DoubleClick(object sender, EventArgs e)
 		{
-			string scrcpyPath = Path.Combine(Environment.CurrentDirectory,"scrcpy","scrcpy.exe");
+			string scrcpyPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath),"scrcpy","scrcpy.exe");
 			if (ListBoxDevices.SelectedIndex != -1)
 			{
 				string adbArgument = $"-s {ListBoxDevices.SelectedItem} logcat -s Unity -T 10";
