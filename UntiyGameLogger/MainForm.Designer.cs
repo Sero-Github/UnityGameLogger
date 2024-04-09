@@ -67,7 +67,7 @@ namespace UnityGameLogger
 			this.LabelTitle.Location = new System.Drawing.Point(8, 8);
 			this.LabelTitle.Margin = new System.Windows.Forms.Padding(0);
 			this.LabelTitle.Name = "LabelTitle";
-			this.LabelTitle.Size = new System.Drawing.Size(520, 25);
+			this.LabelTitle.Size = new System.Drawing.Size(511, 25);
 			this.LabelTitle.TabIndex = 0;
 			this.LabelTitle.Text = "Unity Game Logger";
 			this.LabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,8 +89,8 @@ namespace UnityGameLogger
 			this.ButtonSetStartProgram.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonSetStartProgram.Name = "ButtonSetStartProgram";
 			this.ButtonSetStartProgram.Size = new System.Drawing.Size(168, 24);
-			this.ButtonSetStartProgram.TabIndex = 23;
-			this.ButtonSetStartProgram.Text = "프로그램 설정";
+			this.ButtonSetStartProgram.TabIndex = 14;
+			this.ButtonSetStartProgram.Text = "시작 프로그램 등록";
 			this.ButtonSetStartProgram.UseVisualStyleBackColor = true;
 			this.ButtonSetStartProgram.Click += new System.EventHandler(this.ButtonSetStartProgram_Click);
 			// 
@@ -111,7 +111,7 @@ namespace UnityGameLogger
 			this.ButtonQuitProgram.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonQuitProgram.Name = "ButtonQuitProgram";
 			this.ButtonQuitProgram.Size = new System.Drawing.Size(168, 24);
-			this.ButtonQuitProgram.TabIndex = 24;
+			this.ButtonQuitProgram.TabIndex = 15;
 			this.ButtonQuitProgram.Text = "종료";
 			this.ButtonQuitProgram.UseVisualStyleBackColor = true;
 			this.ButtonQuitProgram.Click += new System.EventHandler(this.ButtonQuitProgram_Click);
@@ -132,7 +132,7 @@ namespace UnityGameLogger
 			this.LabelSplitter1.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter1.Name = "LabelSplitter1";
 			this.LabelSplitter1.Size = new System.Drawing.Size(338, 1);
-			this.LabelSplitter1.TabIndex = 6;
+			this.LabelSplitter1.TabIndex = 0;
 			// 
 			// LabelSplitter2
 			// 
@@ -142,7 +142,7 @@ namespace UnityGameLogger
 			this.LabelSplitter2.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter2.Name = "LabelSplitter2";
 			this.LabelSplitter2.Size = new System.Drawing.Size(338, 1);
-			this.LabelSplitter2.TabIndex = 9;
+			this.LabelSplitter2.TabIndex = 0;
 			// 
 			// ButtonGithubPage
 			// 
@@ -150,7 +150,7 @@ namespace UnityGameLogger
 			this.ButtonGithubPage.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonGithubPage.Name = "ButtonGithubPage";
 			this.ButtonGithubPage.Size = new System.Drawing.Size(84, 24);
-			this.ButtonGithubPage.TabIndex = 22;
+			this.ButtonGithubPage.TabIndex = 12;
 			this.ButtonGithubPage.Text = "Github Page";
 			this.ButtonGithubPage.UseVisualStyleBackColor = true;
 			this.ButtonGithubPage.Click += new System.EventHandler(this.ButtonGithubPage_Click);
@@ -163,7 +163,7 @@ namespace UnityGameLogger
 			this.LabelSplitter3.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter3.Name = "LabelSplitter3";
 			this.LabelSplitter3.Size = new System.Drawing.Size(338, 1);
-			this.LabelSplitter3.TabIndex = 16;
+			this.LabelSplitter3.TabIndex = 0;
 			// 
 			// label6
 			// 
@@ -173,7 +173,7 @@ namespace UnityGameLogger
 			this.label6.MinimumSize = new System.Drawing.Size(1, 1);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(511, 1);
-			this.label6.TabIndex = 16;
+			this.label6.TabIndex = 0;
 			// 
 			// ButtonADBDevice
 			// 
@@ -181,7 +181,7 @@ namespace UnityGameLogger
 			this.ButtonADBDevice.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBDevice.Name = "ButtonADBDevice";
 			this.ButtonADBDevice.Size = new System.Drawing.Size(168, 24);
-			this.ButtonADBDevice.TabIndex = 18;
+			this.ButtonADBDevice.TabIndex = 8;
 			this.ButtonADBDevice.Text = "ADB 기기 수동 검색";
 			this.ButtonADBDevice.UseVisualStyleBackColor = true;
 			this.ButtonADBDevice.Click += new System.EventHandler(this.ButtonADBDevice_Click);
@@ -192,8 +192,8 @@ namespace UnityGameLogger
 			this.ListBoxDevices.ItemHeight = 12;
 			this.ListBoxDevices.Location = new System.Drawing.Point(352, 45);
 			this.ListBoxDevices.Name = "ListBoxDevices";
-			this.ListBoxDevices.Size = new System.Drawing.Size(168, 112);
-			this.ListBoxDevices.TabIndex = 17;
+			this.ListBoxDevices.Size = new System.Drawing.Size(167, 112);
+			this.ListBoxDevices.TabIndex = 7;
 			this.ListBoxDevices.DoubleClick += new System.EventHandler(this.ListBoxDevices_DoubleClick);
 			// 
 			// ButtonADBLogExtract
@@ -203,7 +203,7 @@ namespace UnityGameLogger
 			this.ButtonADBLogExtract.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBLogExtract.Name = "ButtonADBLogExtract";
 			this.ButtonADBLogExtract.Size = new System.Drawing.Size(168, 24);
-			this.ButtonADBLogExtract.TabIndex = 19;
+			this.ButtonADBLogExtract.TabIndex = 9;
 			this.ButtonADBLogExtract.Text = "ADB LOG 추출";
 			this.ButtonADBLogExtract.UseVisualStyleBackColor = true;
 			this.ButtonADBLogExtract.Click += new System.EventHandler(this.ButtonADBExtract_Click);
@@ -214,7 +214,7 @@ namespace UnityGameLogger
 			this.ButtonADBLogClear.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBLogClear.Name = "ButtonADBLogClear";
 			this.ButtonADBLogClear.Size = new System.Drawing.Size(168, 24);
-			this.ButtonADBLogClear.TabIndex = 20;
+			this.ButtonADBLogClear.TabIndex = 10;
 			this.ButtonADBLogClear.Text = "ADB LOG 초기화";
 			this.ButtonADBLogClear.UseVisualStyleBackColor = true;
 			this.ButtonADBLogClear.Click += new System.EventHandler(this.ButtonADBLogClear_Click);
@@ -227,7 +227,7 @@ namespace UnityGameLogger
 			this.LabelSplitter4.MinimumSize = new System.Drawing.Size(1, 1);
 			this.LabelSplitter4.Name = "LabelSplitter4";
 			this.LabelSplitter4.Size = new System.Drawing.Size(166, 1);
-			this.LabelSplitter4.TabIndex = 20;
+			this.LabelSplitter4.TabIndex = 0;
 			// 
 			// ButtonADBLogFolderOpen
 			// 
@@ -235,7 +235,7 @@ namespace UnityGameLogger
 			this.ButtonADBLogFolderOpen.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonADBLogFolderOpen.Name = "ButtonADBLogFolderOpen";
 			this.ButtonADBLogFolderOpen.Size = new System.Drawing.Size(168, 24);
-			this.ButtonADBLogFolderOpen.TabIndex = 21;
+			this.ButtonADBLogFolderOpen.TabIndex = 11;
 			this.ButtonADBLogFolderOpen.Text = "ADB LOG 폴더 열기";
 			this.ButtonADBLogFolderOpen.UseVisualStyleBackColor = true;
 			this.ButtonADBLogFolderOpen.Click += new System.EventHandler(this.ButtonADBLogFolderOpen_Click);
@@ -260,7 +260,7 @@ namespace UnityGameLogger
 			this.LabelProjectName.Location = new System.Drawing.Point(8, 49);
 			this.LabelProjectName.Name = "LabelProjectName";
 			this.LabelProjectName.Size = new System.Drawing.Size(165, 15);
-			this.LabelProjectName.TabIndex = 25;
+			this.LabelProjectName.TabIndex = 0;
 			this.LabelProjectName.Text = "프로젝트 이름";
 			this.LabelProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -278,7 +278,7 @@ namespace UnityGameLogger
 			this.ButtonOpenLogFolder.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonOpenLogFolder.Name = "ButtonOpenLogFolder";
 			this.ButtonOpenLogFolder.Size = new System.Drawing.Size(170, 24);
-			this.ButtonOpenLogFolder.TabIndex = 2;
+			this.ButtonOpenLogFolder.TabIndex = 3;
 			this.ButtonOpenLogFolder.Text = "로그 폴더 열기";
 			this.ButtonOpenLogFolder.UseVisualStyleBackColor = true;
 			this.ButtonOpenLogFolder.Click += new System.EventHandler(this.ButtonOpenLogFolder_Click);
@@ -289,7 +289,7 @@ namespace UnityGameLogger
 			this.ButtonLicense.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonLicense.Name = "ButtonLicense";
 			this.ButtonLicense.Size = new System.Drawing.Size(84, 24);
-			this.ButtonLicense.TabIndex = 27;
+			this.ButtonLicense.TabIndex = 13;
 			this.ButtonLicense.Text = "License";
 			this.ButtonLicense.UseVisualStyleBackColor = true;
 			this.ButtonLicense.Click += new System.EventHandler(this.ButtonLicense_Click);
@@ -302,7 +302,7 @@ namespace UnityGameLogger
 			this.gameLauncher3.MinimumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher3.Name = "gameLauncher3";
 			this.gameLauncher3.Size = new System.Drawing.Size(338, 73);
-			this.gameLauncher3.TabIndex = 26;
+			this.gameLauncher3.TabIndex = 6;
 			// 
 			// gameLauncher2
 			// 
@@ -312,7 +312,7 @@ namespace UnityGameLogger
 			this.gameLauncher2.MinimumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher2.Name = "gameLauncher2";
 			this.gameLauncher2.Size = new System.Drawing.Size(338, 73);
-			this.gameLauncher2.TabIndex = 26;
+			this.gameLauncher2.TabIndex = 5;
 			// 
 			// gameLauncher1
 			// 
@@ -322,7 +322,7 @@ namespace UnityGameLogger
 			this.gameLauncher1.MinimumSize = new System.Drawing.Size(338, 73);
 			this.gameLauncher1.Name = "gameLauncher1";
 			this.gameLauncher1.Size = new System.Drawing.Size(338, 73);
-			this.gameLauncher1.TabIndex = 26;
+			this.gameLauncher1.TabIndex = 4;
 			// 
 			// MainForm
 			// 

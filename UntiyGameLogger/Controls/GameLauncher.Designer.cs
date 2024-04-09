@@ -43,7 +43,7 @@
 			this.TextBoxGameMemo.Location = new System.Drawing.Point(0, 51);
 			this.TextBoxGameMemo.Name = "TextBoxGameMemo";
 			this.TextBoxGameMemo.Size = new System.Drawing.Size(216, 21);
-			this.TextBoxGameMemo.TabIndex = 13;
+			this.TextBoxGameMemo.TabIndex = 5;
 			this.TextBoxGameMemo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.TextBoxGameMemo.TextChanged += new System.EventHandler(this.TextBoxGameMemo_TextChanged);
 			// 
@@ -62,7 +62,7 @@
             0});
 			this.NumericUpDownGameExecuteCount.Name = "NumericUpDownGameExecuteCount";
 			this.NumericUpDownGameExecuteCount.Size = new System.Drawing.Size(152, 21);
-			this.NumericUpDownGameExecuteCount.TabIndex = 12;
+			this.NumericUpDownGameExecuteCount.TabIndex = 1;
 			this.NumericUpDownGameExecuteCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.NumericUpDownGameExecuteCount.Value = new decimal(new int[] {
             1,
@@ -78,7 +78,7 @@
 			this.LabelGameFile.Margin = new System.Windows.Forms.Padding(0);
 			this.LabelGameFile.Name = "LabelGameFile";
 			this.LabelGameFile.Size = new System.Drawing.Size(216, 21);
-			this.LabelGameFile.TabIndex = 14;
+			this.LabelGameFile.TabIndex = 0;
 			this.LabelGameFile.Text = "경로 미설정";
 			this.LabelGameFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -89,7 +89,7 @@
 			this.LabelCountText.Margin = new System.Windows.Forms.Padding(0);
 			this.LabelCountText.Name = "LabelCountText";
 			this.LabelCountText.Size = new System.Drawing.Size(61, 21);
-			this.LabelCountText.TabIndex = 15;
+			this.LabelCountText.TabIndex = 0;
 			this.LabelCountText.Text = "실행 대수";
 			this.LabelCountText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -99,7 +99,7 @@
 			this.ButtonGamePath.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonGamePath.Name = "ButtonGamePath";
 			this.ButtonGamePath.Size = new System.Drawing.Size(120, 24);
-			this.ButtonGamePath.TabIndex = 10;
+			this.ButtonGamePath.TabIndex = 3;
 			this.ButtonGamePath.Text = "PC 빌드 경로 설정";
 			this.ButtonGamePath.UseVisualStyleBackColor = true;
 			this.ButtonGamePath.Click += new System.EventHandler(this.ButtonGamePath_Click);
@@ -110,7 +110,7 @@
 			this.ButtonStartGame.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonStartGame.Name = "ButtonStartGame";
 			this.ButtonStartGame.Size = new System.Drawing.Size(120, 24);
-			this.ButtonStartGame.TabIndex = 9;
+			this.ButtonStartGame.TabIndex = 2;
 			this.ButtonStartGame.Text = "게임 실행";
 			this.ButtonStartGame.UseVisualStyleBackColor = true;
 			this.ButtonStartGame.Click += new System.EventHandler(this.ButtonStartGame_Click);
@@ -121,7 +121,7 @@
 			this.ButtonOpenGameLogFolder.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonOpenGameLogFolder.Name = "ButtonOpenGameLogFolder";
 			this.ButtonOpenGameLogFolder.Size = new System.Drawing.Size(120, 24);
-			this.ButtonOpenGameLogFolder.TabIndex = 11;
+			this.ButtonOpenGameLogFolder.TabIndex = 4;
 			this.ButtonOpenGameLogFolder.Text = "로그 폴더 열기";
 			this.ButtonOpenGameLogFolder.UseVisualStyleBackColor = true;
 			this.ButtonOpenGameLogFolder.Click += new System.EventHandler(this.ButtonOpenGameLogFolder_Click);
