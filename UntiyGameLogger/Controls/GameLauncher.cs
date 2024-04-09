@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using UnityGameLogger.Config;
 
 namespace UnityGameLogger.Controls
 {
@@ -32,10 +33,11 @@ namespace UnityGameLogger.Controls
 		{
 			if (!DesignMode)
 			{
-				NumericUpDownGameExecuteCount.Text = Program.configLoader.GameConfigs[_gameConfigSlot].GameExecuteCount.ToString();
-				TextBoxGameMemo.Text = Program.configLoader.GameConfigs[_gameConfigSlot].GameMemo;
+				ConfigLoader configLoader = ConfigLoader.Instance;
+				NumericUpDownGameExecuteCount.Text = configLoader.GameConfigs[_gameConfigSlot].GameExecuteCount.ToString();
+				TextBoxGameMemo.Text = configLoader.GameConfigs[_gameConfigSlot].GameMemo;
 
-				string gameFile = Program.configLoader.GameConfigs[_gameConfigSlot].GameFile;
+				string gameFile = configLoader.GameConfigs[_gameConfigSlot].GameFile;
 
 				if (gameFile == "")
 				{
@@ -52,9 +54,10 @@ namespace UnityGameLogger.Controls
 		{
 			int gameExecuteCount = 1;
 
+			ConfigLoader configLoader = ConfigLoader.Instance;
 			string timeStamp = DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
-			string filePath = Path.Combine(Program.configLoader.GameConfigs[_gameConfigSlot].GameDirectory, Program.configLoader.GameConfigs[_gameConfigSlot].GameFile);
-			string fileName = Program.configLoader.GameConfigs[_gameConfigSlot].GameFile;
+			string filePath = Path.Combine(configLoader.GameConfigs[_gameConfigSlot].GameDirectory, configLoader.GameConfigs[_gameConfigSlot].GameFile);
+			string fileName = configLoader.GameConfigs[_gameConfigSlot].GameFile;
 
 			if (!File.Exists(filePath))
 			{
@@ -66,13 +69,13 @@ namespace UnityGameLogger.Controls
 			{
 				StringBuilder unityLogArgument = new StringBuilder();
 				unityLogArgument.Append("-Name \"Player" + (i + 1) + "\" ");
-				unityLogArgument.Append("-logFile \"" + Program.configLoader.GameConfigs[_gameConfigSlot].GameDirectory + "\\log\\" + timeStamp + "_Player" + (i + 1) + ".log" + "\" ");
-				unityLogArgument.Append("-crash-report-folder \"" + Program.configLoader.GameConfigs[_gameConfigSlot].GameDirectory + "\\log\\\"");
+				unityLogArgument.Append("-logFile \"" + configLoader.GameConfigs[_gameConfigSlot].GameDirectory + "\\log\\" + timeStamp + "_Player" + (i + 1) + ".log" + "\" ");
+				unityLogArgument.Append("-crash-report-folder \"" + configLoader.GameConfigs[_gameConfigSlot].GameDirectory + "\\log\\\"");
 				Process.Start(filePath, unityLogArgument.ToString());
 
 				Thread.Sleep(1000);
 
-				int hWnd = FindWindowA(null, Program.configLoader.ProjectConfig.ProjectName);
+				int hWnd = FindWindowA(null, configLoader.ProjectConfig.ProjectName);
 				string windowText = $"File Name : {fileName} | LogFile : {timeStamp}_Player{i + 1}.log";
 				SetWindowText(hWnd, windowText);
 
@@ -91,8 +94,9 @@ namespace UnityGameLogger.Controls
 				string fileDirectory = Path.GetDirectoryName(ofd.FileName);
 				string fileName = Path.GetFileName(ofd.FileName);
 
-				Program.configLoader.GameConfigs[_gameConfigSlot].GameDirectory = fileDirectory;
-				Program.configLoader.GameConfigs[_gameConfigSlot].GameFile = fileName;
+				ConfigLoader configLoader = ConfigLoader.Instance;
+				configLoader.GameConfigs[_gameConfigSlot].GameDirectory = fileDirectory;
+				configLoader.GameConfigs[_gameConfigSlot].GameFile = fileName;
 
 				LabelGameFile.Text = fileName;
 			}
@@ -100,20 +104,23 @@ namespace UnityGameLogger.Controls
 
 		private void ButtonOpenGameLogFolder_Click(object sender, EventArgs e)
 		{
-			string logFolder = Path.Combine(Program.configLoader.GameConfigs[_gameConfigSlot].GameDirectory, "log");
+			ConfigLoader configLoader = ConfigLoader.Instance;
+			string logFolder = Path.Combine(configLoader.GameConfigs[_gameConfigSlot].GameDirectory, "log");
 			Process.Start("explorer.exe", logFolder);
 		}
 
 		private void NumericUpDownGameExecuteCount_ValueChanged(object sender, EventArgs e)
 		{
 			int gameExecuteCount = int.Parse(NumericUpDownGameExecuteCount.Value.ToString());
-			Program.configLoader.GameConfigs[_gameConfigSlot].GameExecuteCount = gameExecuteCount;
+			ConfigLoader configLoader = ConfigLoader.Instance;
+			configLoader.GameConfigs[_gameConfigSlot].GameExecuteCount = gameExecuteCount;
 		}
 
 		private void TextBoxGameMemo_TextChanged(object sender, EventArgs e)
 		{
 			string gamemMemo = TextBoxGameMemo.Text;
-			Program.configLoader.GameConfigs[_gameConfigSlot].GameMemo = gamemMemo;
+			ConfigLoader configLoader = ConfigLoader.Instance;
+			configLoader.GameConfigs[_gameConfigSlot].GameMemo = gamemMemo;
 		}
 	}
 }

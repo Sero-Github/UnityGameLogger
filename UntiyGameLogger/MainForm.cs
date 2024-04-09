@@ -7,6 +7,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using Microsoft.Win32;
+using UnityGameLogger.Config;
 
 namespace UnityGameLogger
 {
@@ -84,7 +85,8 @@ namespace UnityGameLogger
 		#region Buttons
 		private void ButtonOpenLogFolder_Click(object sender, EventArgs e)
 		{
-			Process.Start("explorer.exe", Program.configLoader.LogConfig.LogDirectory);
+			ConfigLoader configLoader = ConfigLoader.Instance;
+			Process.Start("explorer.exe", configLoader.LogConfig.LogDirectory);
 		}
 
 		private void ButtonSetLogFolder_Click(object sender, EventArgs e)
@@ -97,7 +99,8 @@ namespace UnityGameLogger
 
 			if (ofd.ShowDialog() == CommonFileDialogResult.Ok)
 			{
-				Program.configLoader.LogConfig.LogDirectory = ofd.FileName;
+				ConfigLoader configLoader = ConfigLoader.Instance;
+				configLoader.LogConfig.LogDirectory = ofd.FileName;
 			}
 		}
 
@@ -147,7 +150,8 @@ namespace UnityGameLogger
 		#region MainForm
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			TextBoxProjectName.Text = Program.configLoader.ProjectConfig.ProjectName;
+			ConfigLoader configLoader = ConfigLoader.Instance;
+			TextBoxProjectName.Text = configLoader.ProjectConfig.ProjectName;
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -366,7 +370,8 @@ namespace UnityGameLogger
 
 		private void TextBoxProjectName_TextChanged(object sender, EventArgs e)
 		{
-			Program.configLoader.ProjectConfig.ProjectName = TextBoxProjectName.Text;
+			ConfigLoader configLoader = ConfigLoader.Instance;
+			configLoader.ProjectConfig.ProjectName = TextBoxProjectName.Text;
 		}
 	}
 }

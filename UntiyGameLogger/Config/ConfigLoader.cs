@@ -1,9 +1,12 @@
-﻿using UnityGameLogger.Config.Option;
+﻿using System;
+using UnityGameLogger.Config.Option;
 
 namespace UnityGameLogger.Config
 {
 	internal class ConfigLoader
 	{
+		private static readonly Lazy<ConfigLoader> instance = new Lazy<ConfigLoader>(() => new ConfigLoader());
+
 		#region 변수
 		public ProjectConfig ProjectConfig;
 
@@ -14,10 +17,9 @@ namespace UnityGameLogger.Config
 		public GameConfig GameConfig3;
 
 		public GameConfig[] GameConfigs;
-
 		#endregion
 
-		public ConfigLoader()
+		private ConfigLoader()
 		{
 			ProjectConfig = new ProjectConfig();
 
@@ -29,6 +31,11 @@ namespace UnityGameLogger.Config
 				GameConfig2 = new GameConfig(2),
 				GameConfig3 = new GameConfig(3)
 			};
+		}
+
+		public static ConfigLoader Instance
+		{
+			get => instance.Value;
 		}
 	}
 }

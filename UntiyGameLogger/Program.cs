@@ -13,16 +13,12 @@ namespace UnityGameLogger
 		/// 해당 애플리케이션의 주 진입점입니다.
 		/// </summary>
 		public static FileSystemWatcher LogFileWatcher;
-		
-		public static ConfigLoader configLoader;
 
 		[STAThread]
 		static void Main()
 		{
-			configLoader = new ConfigLoader();
-
 			LogFileWatcher = new FileSystemWatcher();
-			LogFileWatcher.Path = configLoader.LogConfig.LogDirectory;
+			LogFileWatcher.Path = ConfigLoader.Instance.LogConfig.LogDirectory;
 			LogFileWatcher.Filter = "Player-*.log";
 			LogFileWatcher.NotifyFilter = NotifyFilters.FileName;
 			LogFileWatcher.Created += FileSystemWatcher_Changed;

@@ -78,7 +78,7 @@ namespace UnityGameLogger
 			this.ButtonSetLogFolder.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonSetLogFolder.Name = "ButtonSetLogFolder";
 			this.ButtonSetLogFolder.Size = new System.Drawing.Size(170, 24);
-			this.ButtonSetLogFolder.TabIndex = 2;
+			this.ButtonSetLogFolder.TabIndex = 1;
 			this.ButtonSetLogFolder.Text = "로그 폴더 설정";
 			this.ButtonSetLogFolder.UseVisualStyleBackColor = true;
 			this.ButtonSetLogFolder.Click += new System.EventHandler(this.ButtonSetLogFolder_Click);
@@ -269,7 +269,7 @@ namespace UnityGameLogger
 			this.TextBoxProjectName.Location = new System.Drawing.Point(8, 72);
 			this.TextBoxProjectName.Name = "TextBoxProjectName";
 			this.TextBoxProjectName.Size = new System.Drawing.Size(165, 21);
-			this.TextBoxProjectName.TabIndex = 1;
+			this.TextBoxProjectName.TabIndex = 3;
 			this.TextBoxProjectName.TextChanged += new System.EventHandler(this.TextBoxProjectName_TextChanged);
 			// 
 			// ButtonOpenLogFolder
@@ -278,7 +278,7 @@ namespace UnityGameLogger
 			this.ButtonOpenLogFolder.Margin = new System.Windows.Forms.Padding(0);
 			this.ButtonOpenLogFolder.Name = "ButtonOpenLogFolder";
 			this.ButtonOpenLogFolder.Size = new System.Drawing.Size(170, 24);
-			this.ButtonOpenLogFolder.TabIndex = 3;
+			this.ButtonOpenLogFolder.TabIndex = 2;
 			this.ButtonOpenLogFolder.Text = "로그 폴더 열기";
 			this.ButtonOpenLogFolder.UseVisualStyleBackColor = true;
 			this.ButtonOpenLogFolder.Click += new System.EventHandler(this.ButtonOpenLogFolder_Click);
