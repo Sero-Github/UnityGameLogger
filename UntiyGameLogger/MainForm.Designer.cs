@@ -328,6 +328,7 @@ namespace UnityGameLogger
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(528, 376);
 			this.Controls.Add(this.ButtonLicense);
 			this.Controls.Add(this.gameLauncher3);
@@ -353,6 +354,7 @@ namespace UnityGameLogger
 			this.Controls.Add(this.LabelProgramInfo);
 			this.Controls.Add(this.LabelTitle);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "Unity Game Logger";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
