@@ -52,7 +52,7 @@ namespace UnityGameLogger.Controls
 
 		private void ButtonStartGame_Click(object sender, EventArgs e)
 		{
-			int gameExecuteCount = 1;
+			int gameExecuteCount = (int) NumericUpDownGameExecuteCount.Value;
 
 			ConfigLoader configLoader = ConfigLoader.Instance;
 			string timeStamp = DateTime.Now.ToString("yyyy-MM-dd_HHmmss");
