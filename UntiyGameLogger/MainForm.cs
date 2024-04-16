@@ -169,23 +169,25 @@ namespace UnityGameLogger
 		private void ExitProgram()
 		{
 			DialogResult isClose = MessageBox.Show("종료 시 로그 저장이 자동으로 되지 않습니다.\nAndroid 기기 명령도 같이 종료됩니다.\n종료하시겠습니까?", "프로그램 종료", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-			string adbArgument = $@"/c {adbPath} kill-server";
-			Process proc = new Process
-			{
-				StartInfo = new ProcessStartInfo
-				{
-					FileName = "cmd",
-					Arguments = adbArgument,
-					UseShellExecute = false,
-					RedirectStandardOutput = true,
-					CreateNoWindow = true
-				}
-			};
-			proc.Start();
-
+			
 			if (isClose == DialogResult.Yes)
 			{
+				string adbArgument = $@"/c {adbPath} kill-server";
+				Process proc = new Process
+				{
+					StartInfo = new ProcessStartInfo
+					{
+						FileName = "cmd",
+						Arguments = adbArgument,
+						UseShellExecute = false,
+						RedirectStandardOutput = true,
+						CreateNoWindow = true
+					}
+				};
+				proc.Start();
+
+				TrayIcon.Visible = false;
+
 				Environment.Exit(0);
 			}
 		}
