@@ -102,7 +102,7 @@ namespace UnityGameLogger
 			this.LabelProgramInfo.Name = "LabelProgramInfo";
 			this.LabelProgramInfo.Size = new System.Drawing.Size(512, 32);
 			this.LabelProgramInfo.TabIndex = 0;
-			this.LabelProgramInfo.Text = "Dev Sero-Github sero.developer@gmail.com\r\nVer 1.2.0 240317";
+			this.LabelProgramInfo.Text = "Dev Sero-Github sero.developer@gmail.com\r\nVer 1.2.0 240416";
 			this.LabelProgramInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// ButtonQuitProgram
@@ -119,7 +119,7 @@ namespace UnityGameLogger
 			// TrayIcon
 			// 
 			this.TrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("TrayIcon.Icon")));
-			this.TrayIcon.Text = "notifyIcon1";
+			this.TrayIcon.Text = "UnityGameLogger";
 			this.TrayIcon.Visible = true;
 			this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseClick);
 			this.TrayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseDoubleClick);
