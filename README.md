@@ -32,10 +32,11 @@ Unity Game Logger를 사용하여 게임을 실행하세요.
 ![UI_ANDROID](./image/ui_android.png)
 
 Android 기기에 설치한 게임의 로그를 버튼 하나만으로 간단히 추출과 초기화를 할 수 있습니다.
+
 *이 기능은 [Android Debug Bridge](https://developer.android.com/tools/adb) 명령어를 사용합니다.*
 
 
-# 2.PC 기능
+# 2. PC 기능
 
 ## 2-1. Player.log 자동 삭제 방지
 
@@ -61,7 +62,7 @@ Android 기기에 설치한 게임의 로그를 버튼 하나만으로 간단히
 게임 파일 명 하단 텍스트 박스에 어떤 용도의 빌드인지 간단하게 메모를 작성할 수 있습니다.
 
 
-# Android 기능
+# 3. Android 기능
 
 Android 기능은 [Android Debug Bridge](https://developer.android.com/tools/adb)와 [scrcpy](https://github.com/Genymobile/scrcpy)를 사용합니다.
 UnityGameLogger/scrcpy 경로의 파일을 참조합니다.
@@ -71,14 +72,14 @@ USB 디버그 모드가 켜져 있는 Andorid 기기를 연결 시 자동으로 
 자동 인식이 되지 않는다면 **수동 검색 버튼**을 눌러 재검색이 가능합니다.
 
 
-## 1. Android 기기 로그 추출 및 초기화
+## 3-1. Android 기기 로그 추출 및 초기화
 
 USB 디버그 모드가 켜져있는 Android 기기를 연결하여 일반 로그와 Unity 로그를 추출해주는 기능을 가지고 있습니다. Andorid 로그 폴더는 프로그램 내 Android-LOG 폴더 내 저장됩니다.
 
 *이 기능은 [Android Debug Bridge](https://developer.android.com/tools/adb) 명령어를 사용합니다.*
 
 
-## 2. Android 기기 PC 송출
+## 3-2. Android 기기 PC 송출
 
 USB 디버그 모드가 켜져있는 Android 기기를 연결하여 화면과 실시간 Unity 로그를 띄워줍니다.
 
